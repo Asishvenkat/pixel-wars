@@ -75,7 +75,7 @@ I engineered the system to be robust against common distributed system challenge
 *   ** Live Leaderboard**: Real-time ranking of top players.
 *   ** Interactive Map**: Zoom/Pan controls for the battlefield.
 
-## �️ Tech Stack
+##  Tech Stack
 *   **Frontend**: React (Vite), Socket.io-client, CSS Variables.
 *   **Backend**: Node.js, Express, Socket.io, File System (fs).
 *   **Testing**: Native Node.js `assert`.
