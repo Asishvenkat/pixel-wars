@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
       const result = gridManager.canCapture(socket.id, x, y);
 
       if (!result.allowed) {
-        socket.emit('error_message', result.error);
+        socket.emit('capture_error', { message: result.error, x, y });
         return;
       }
 
