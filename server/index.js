@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -13,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: process.env.CLIENT_URL || "*",
     methods: ["GET", "POST"]
   }
 });

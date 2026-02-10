@@ -4,7 +4,7 @@ import Grid from './Grid';
 import './index.css';
 
 // Connect to backend
-const socket = io(import.meta.env.PROD ? undefined : 'http://localhost:3001');
+const socket = io(import.meta.env.VITE_SERVER_URL || (import.meta.env.PROD ? undefined : 'http://localhost:3001'));
 
 const GRID_SIZE = 20;
 

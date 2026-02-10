@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "cors": "^2.8.5",
+        "dotenv": "^17.2.4",
         "express": "^4.18.2",
         "pixel-wars-root": "file:..",
         "socket.io": "^4.7.2"
