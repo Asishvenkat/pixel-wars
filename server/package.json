@@ -1,0 +1,20 @@
+{
+    "name": "pixel-wars-server",
+    "version": "1.0.0",
+    "description": "Real-time backend for PixelWars",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "node test.js",
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "pixel-wars-root": "file:..",
+        "socket.io": "^4.7.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}
