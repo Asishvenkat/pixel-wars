@@ -5,11 +5,15 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+const clientDistPath = path.join(__dirname, '../client/dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+}
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -70,7 +74,11 @@ io.on('connection', (socket) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+  if (fs.existsSync(path.join(clientDistPath, 'index.html'))) {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  } else {
+    res.send('Server is running! Frontend is hosted separately.');
+  }
 });
 
 const PORT = process.env.PORT || 3001;
