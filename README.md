@@ -1,4 +1,4 @@
-# PixelWars - Real-time Collaborative Strategy Game ⚔️
+# PixelWars - Real-time Collaborative Strategy Game 
 
 A high-performance, real-time multiplayer territory control game. Players compete to claim blocks, climb the leaderboard, and defend territory using strategic mechanics.
 
@@ -6,7 +6,7 @@ Built for the **InboxKit Intern Assignment**.
 
 ---
 
-## � How to Run
+## How to Run
 
 You will need **two terminal windows** (one for backend, one for frontend).
 
@@ -31,7 +31,7 @@ npm run dev
 
 ---
 
-## �🔄 How It Works
+## How It Works
 
 1.  **User Action**: You click a block on the grid.
 2.  **Client Emit**: The `capture_block` event is sent via Socket.io to the server.
@@ -43,7 +43,7 @@ npm run dev
 6.  **Broadcast**: The server emits a lightweight `block_update` event to **all connected clients**.
 7.  **Client Sync**: All screens update instantly to show the new color.
 
-## 📡 How I Handled Real-Time Updates
+##  How I Handled Real-Time Updates
 
 I engineered the system to be robust against common distributed system challenges:
 
@@ -52,7 +52,7 @@ I engineered the system to be robust against common distributed system challenge
 *   **Bandwidth Optimization**: Instead of sending the full 400-block grid on every move, I broadcast only **deltas** (single block updates), minimizing data transfer.
 *   **Bot Prevention**: A global cooldown + block-specific locks prevent script-spamming.
 
-## ⚖️ Trade-offs Made
+##  Trade-offs Made
 
 1.  **In-Memory State vs. Database**:
     *   *Decision*: Used a Javascript `Map` with file-system backup (`fs`).
@@ -70,14 +70,14 @@ I engineered the system to be robust against common distributed system challenge
 
 ---
 
-## 🎁 Bonus Features
-*   **🛡️ Defense System**: Capturing a block **locks** it for 10s (🔒 icon).
-*   **🏆 Live Leaderboard**: Real-time ranking of top players.
-*   **🔍 Interactive Map**: Zoom/Pan controls for the battlefield.
+##  Bonus Features
+*   ** Defense System**: Capturing a block **locks** it for 10s (🔒 icon).
+*   ** Live Leaderboard**: Real-time ranking of top players.
+*   ** Interactive Map**: Zoom/Pan controls for the battlefield.
 
 ## �️ Tech Stack
 *   **Frontend**: React (Vite), Socket.io-client, CSS Variables.
 *   **Backend**: Node.js, Express, Socket.io, File System (fs).
 *   **Testing**: Native Node.js `assert`.
 
-*Built with ❤️ for InboxKit*
+
